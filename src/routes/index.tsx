@@ -29,11 +29,16 @@ const mockPayments = [
   { created: "2025-10-12", client: "Maria Souza", amount: 49.0, due: "2025-10-20", status: "paid" },
   { created: "2025-09-12", client: "Maria Souza", amount: 49.0, due: "2025-09-20", status: "pending" },
 ];
-const mockClients = [
+type Client = { name: string; email: string; licenses: number };
+type Product = { name: string; description: string; monthly: number; yearly: number; active: boolean };
+type License = { product: string; client: string; key: string; plan: string; expires: string; status: string };
+type Payment = { created: string; client: string; amount: number; due: string; status: string };
+
+const initialClients: Client[] = [
   { name: "João Silva", email: "joao@exemplo.com", licenses: 1 },
   { name: "Maria Souza", email: "maria@exemplo.com", licenses: 1 },
 ];
-const mockProducts = [
+const initialProducts: Product[] = [
   { name: "GetLicence Pro", description: "Plano completo", monthly: 29.9, yearly: 299.0, active: true },
   { name: "GetLicence Cloud", description: "Hospedagem incluída", monthly: 49.0, yearly: 490.0, active: true },
 ];
